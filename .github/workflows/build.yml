@@ -8,6 +8,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
+      - run: flutter create. --platforms=android --project-name jarvis_rog --org com.jarvis.rog
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
