@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+import 'assistant/assistant_screen.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const JarvisRogApp());
+}
+
+class JarvisRogApp extends StatelessWidget {
+  const JarvisRogApp({super.key});
+
+  static const Color red = Color(0xFFFF2344);
+
+  @override
+  Widget build(BuildContext context) {
+    const background = Color(0xFF0B0808);
+    
+    return MaterialApp(
+      title: 'JARVIS ROG Edition',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: background,
+        colorScheme: ColorScheme.dark(
+          primary: red,
+          secondary: Color(0xFF660D19),
+          surface: Color(0xFF111215),
+          error: Color(0xFFFF4874),
+        ),
+        snackBarTheme: const SnackBarThemeData(
+          backgroundColor: Color(0xFF1E1E1E),
+          contentTextStyle: TextStyle(color: Colors.white),
+          behavior: SnackBarBehavior.floating,
+        ),
+        useMaterial3: true,
+      ),
+      home: const AssistantScreen(),
+    );
+  }
+}
